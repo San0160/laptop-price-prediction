@@ -23,4 +23,7 @@ X_train, X_test, y_train, y_test = prepare_data(df_fe)
 from src.model_training import train_linear_regression
 model = train_linear_regression(X_train, y_train)
 
-print("Baseline Linear Regression trained")
+from src.model_evaluation import evaluate_regression 
+metrics=evaluate_regression(model,X_test, y_test)
+
+print("Baseline Evaluation:", metrics)
