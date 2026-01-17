@@ -25,11 +25,11 @@ model = train_linear_regression(X_train, y_train)
 
 from src.model_training import train_ridge_regression
 ridge_model = train_ridge_regression(X_train, y_train, alpha=1.0)
-print("Ridge Regression trained")
+
+from src.model_training import train_random_forest
+rf_model=train_random_forest(X_train, y_train)
+print("Random Forest trained")
 
 from src.model_evaluation import evaluate_regression 
-metrics=evaluate_regression(ridge_model,X_test, y_test)
-
-
-
-print("Evaluation after Ridge Evaluation:", metrics)
+rf_metrics=evaluate_regression(rf_model,X_test, y_test)
+print("Random Forest Evaluation:", rf_metrics)
